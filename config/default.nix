@@ -8,6 +8,7 @@
     ./plugins/cmp.nix
     ./plugins/lua_snip.nix
     ./plugins/lazygit.nix
+    ./plugins/treesitter.nix
 
     ./plugins/theme.nix
 

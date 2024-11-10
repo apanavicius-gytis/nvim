@@ -31,6 +31,7 @@
             };
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
+          lazygit = pkgs.lazygit;
         in
         {
           checks = {
@@ -40,7 +41,13 @@
 
           packages = {
             # Lets you run `nix run .` to start nixvim
-            default = nvim;
+            default = pkgs.buildEnv {
+              name = "nixvim-env";
+              paths = [ nvim lazygit ];
+            };
+
+
+
           };
         };
     };
