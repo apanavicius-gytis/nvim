@@ -1,6 +1,6 @@
 {
   # Import all your configuration modules here
-  imports = [ 
+  imports = [
     ./bufferline.nix
     ./plugins/neo-tree.nix
     ./plugins/telescope.nix
@@ -9,6 +9,9 @@
     ./plugins/lua_snip.nix
     ./plugins/lazygit.nix
     ./plugins/treesitter.nix
+    ./plugins/toggleterm.nix
+    ./plugins/debug.nix
+    ./plugins/dap.nix
 
     ./plugins/theme.nix
 
