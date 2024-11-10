@@ -12,54 +12,69 @@
     };
   };
 
-  outputs = {
-    nixpkgs,
-    nixvim,
-    flake-parts,
-    pre-commit-hooks,
-    ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin"];
+  outputs =
+    {
+      nixpkgs,
+      nixvim,
+      flake-parts,
+      pre-commit-hooks,
+      ...
+    }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "aarch64-linux"
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
 
-      perSystem = {
-        system,
-        pkgs,
-        self',
-        lib,
-        ...
-      }: let
-        nixvim' = nixvim.legacyPackages.${system};
-        nvim = nixvim'.makeNixvimWithModule {
-          inherit pkgs;
-          module = ./config;
-        };
-      in {
-        checks = {
-          default = pkgs.nixvimLib.check.mkTestDerivationFromNvim {
-            inherit nvim;
-            name = "A nixvim configuration";
+      perSystem =
+        {
+          system,
+          pkgs,
+          self',
+          lib,
+          ...
+        }:
+        let
+          nixvim' = nixvim.legacyPackages.${system};
+          nvim = nixvim'.makeNixvimWithModule {
+            inherit pkgs;
+            module = ./config;
           };
-          pre-commit-check = pre-commit-hooks.lib.${system}.run {
-            src = ./.;
-            hooks = {
-              statix.enable = true;
-              nixfmt-rfc-style.enable = true;
+        in
+        {
+          checks = {
+            default = pkgs.nixvimLib.check.mkTestDerivationFromNvim {
+              inherit nvim;
+              name = "A nixvim configuration";
+            };
+            pre-commit-check = pre-commit-hooks.lib.${system}.run {
+              src = ./.;
+              hooks = {
+                statix.enable = true;
+                nixfmt-rfc-style.enable = true;
+              };
             };
           };
+
+          formatter = pkgs.nixfmt-rfc-style;
+
+          packages.default = nvim;
+          devShells = {
+            default =
+              with pkgs;
+              mkShell {
+                buildInputs = [ lazygit ]; # Add lazygit here
+                shellHook = ''
+                            # Existing shellHook logic for pre-commit-check
+                            ${toString self'.checks.pre-commit-check.shellHook}
+
+                            # Ensure lazygit is in the PATH for subprocesses
+                            export PATH="${pkgs.lazygit}/bin:$PATH"
+                  	      '';
+              };
+          };
         };
-
-        formatter = pkgs.nixfmt-rfc-style;
-
-        packages.default = nvim;
-
-        devShells = {
-          default = with pkgs;
-            mkShell {
-              inherit (self'.checks.pre-commit-check) shellHook;
-              buildInputs = [ lazygit ];  # Add lazygit here
-            };
-        };
-      };
     };
 }
