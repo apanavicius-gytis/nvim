@@ -42,7 +42,7 @@
           packages = {
             # Lets you run `nix run .` to start nixvim
             default = pkgs.buildEnv {
-              name = "nixvim-env";
+	      name = "default";
               paths = [ nvim lazygit ];
             };
 
