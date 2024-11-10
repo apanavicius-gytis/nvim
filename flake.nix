@@ -1,13 +1,19 @@
 {
-  description = "My own Neovim flake";
+  description = "Neovim config";
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs";
     };
     neovim = {
-      url = "github:neovim/neovim/stable?dir=contrib";
+      url = "github:neovim/neovim/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, neovim }: { };
+  outputs = { self, nixpkgs, neovim }: {
+      packages.x86_64-linux.default = neovim.packages.x86_64-linux.neovim;
+      apps.x86_64-linux.default = {
+        type = "app";
+        program = "${neovim.packages.x86_64-linux.neovim}/bin/nvim";
+      };
+    };
 }
