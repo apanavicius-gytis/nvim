@@ -1,3 +1,4 @@
+# flake.nix
 {
   description = "My own Neovim flake";
   inputs = {
@@ -5,7 +6,7 @@
       url = "github:NixOS/nixpkgs";
     };
     neovim = {
-      url = "github:neovim/neovim?dir=contrib";
+      url = "github:neovim/neovim/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -17,3 +18,4 @@
       };
     };
 }
+
