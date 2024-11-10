@@ -39,16 +39,7 @@
             default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
           };
 
-          packages = {
-            # Lets you run `nix run .` to start nixvim
-            default = pkgs.buildEnv {
-	      name = "default";
-              paths = [ nvim lazygit ];
-            };
-
-
-
-          };
+	  packages.default = nvim;
         };
     };
 }
