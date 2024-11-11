@@ -2,7 +2,7 @@
   # Import all your configuration modules here
   imports = [
     ./bufferline.nix
-    ./plugins/neo-tree.nix
+    ./plugins/nvim-tree.nix
     ./plugins/telescope.nix
     ./plugins/lsp.nix
     ./plugins/cmp.nix
