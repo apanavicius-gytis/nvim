@@ -31,7 +31,7 @@
           text = "";
           texthl = "DapLogPoint";
         };
-      };
+      }; 
     };
   };
 
