@@ -2,6 +2,8 @@
   # Import all your configuration modules here
   imports = [
     ./bufferline.nix
+    ./auto_cmds.nix
+    
     ./plugins/nvim-tree.nix
     ./plugins/telescope.nix
     ./plugins/lsp.nix
