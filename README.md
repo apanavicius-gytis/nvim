@@ -15,3 +15,23 @@ To test your configuration simply run the following command
 ```
 nix run .
 ```
+
+## Debug Golang code
+Build configurations should be in `./vscode/launch.json`. Example:
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug project",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}/",
+      "args": [],
+      "buildFlags": "-v",
+      "dlvToolPath": "${env:GOPATH}/bin/dlv"
+    }
+  ]
+}
+```
