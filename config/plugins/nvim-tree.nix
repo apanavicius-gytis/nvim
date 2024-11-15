@@ -2,6 +2,11 @@
   plugins.nvim-tree = {
     enable = true;
     actions.openFile.quitOnOpen = true;
+    filters = {
+      dotfiles = false;
+      custom = [];
+      gitClean = false;
+    };
   };
 
   keymaps = [

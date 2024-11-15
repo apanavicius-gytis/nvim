@@ -9,7 +9,12 @@
       servers = {
         lua_ls = {enable = true;};
         nil_ls = {enable = true;};
-        gopls = {enable = true;};
+        gopls = {
+          enable = true;
+          settings = {
+            buildFlags = "wireinject";
+          };
+        };
         helm_ls = {
           enable = true;
           extraOptions = {
