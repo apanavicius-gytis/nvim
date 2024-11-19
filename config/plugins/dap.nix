@@ -47,7 +47,7 @@
     }
     {
       mode = "n";
-      key = "<leader>db";
+      key = "<F5>";
       action = ":DapToggleBreakpoint<cr>";
       options = {
         silent = true;
@@ -56,7 +56,7 @@
     }
     {
       mode = "n";
-      key = "<leader>dc";
+      key = "<F10>";
       action = ":DapContinue<cr>";
       options = {
         silent = true;
@@ -92,7 +92,7 @@
     }
     {
       mode = "n";
-      key = "<leader>di";
+      key = "<F8>";
       action = ":DapStepInto<cr>";
       options = {
         silent = true;
@@ -137,7 +137,7 @@
     }
     {
       mode = "n";
-      key = "<leader>dO";
+      key = "<F9>";
       action = ":DapStepOver<cr>";
       options = {
         silent = true;
