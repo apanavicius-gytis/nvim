@@ -17,6 +17,7 @@
     ./plugins/dap.nix
     ./plugins/direnv.nix
     ./plugins/render_markdown.nix
+    ./plugins/autoclose.nix
 
     ./plugins/theme.nix
 
