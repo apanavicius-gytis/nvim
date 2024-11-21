@@ -22,5 +22,7 @@
     ./plugins/theme.nix
 
     ./settings.nix
+
+    ./keymaps.nix
   ];
 }
