@@ -16,5 +16,13 @@
         desc = "LazyGit (root dir)";
       };
     }
+{
+      mode = "n";
+      key = "<leader>\\";
+      action = "<cmd>BufferClose<CR>";
+      options = {
+        desc = "LazyGit (root dir)";
+      };
+    }
   ];
 }
