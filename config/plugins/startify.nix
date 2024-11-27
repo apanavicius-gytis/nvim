@@ -1,5 +1,5 @@
 {
   plugins.startify = {
     enable = true;
-  }
+  };
 }
