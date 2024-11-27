@@ -18,6 +18,7 @@
     ./plugins/direnv.nix
     ./plugins/render_markdown.nix
     ./plugins/autoclose.nix
+    ./plugins/startify.nix
 
     ./plugins/theme.nix
 
