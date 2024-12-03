@@ -1,0 +1,5 @@
+{
+  plugins.smartcolumn = {
+    enable = true;
+  };
+}

@@ -20,6 +20,7 @@
     ./plugins/autoclose.nix
     ./plugins/startify.nix
     ./plugins/lualine.nix
+    ./plugins/smartcolumn.nix
 
     ./plugins/theme.nix
 

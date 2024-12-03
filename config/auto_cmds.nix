@@ -20,6 +20,7 @@
     }
     {
       command = ":silent! :%!goimports";
+
       event = [
         "BufWritePre"
       ];

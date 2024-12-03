@@ -25,10 +25,14 @@
       "branch"
     ];
     lualine_c = [
-      "filename"
+      {
+        __unkeyed-1 = "filename";
+        path = 1;
+      }
       "diff"
     ];
     lualine_x = [
+      "searchcount"
       "diagnostics"
       {
         __unkeyed-1 = {
@@ -89,33 +93,12 @@
       }
     ];
   };
-  tabline = {
-    lualine_a = [
-      {
-        __unkeyed-1 = "buffers";
-        symbols = {
-          alternate_file = "";
-        };
-      }
-    ];
-    lualine_z = [
-      "tabs"
-    ];
-  };
-  winbar = {
+    winbar = {
     lualine_c = [
       {
         __unkeyed-1 = "navic";
       }
-    ];
-    lualine_x = [
-      {
-        __unkeyed-1 = "filename";
-        newfile_status = true;
-        path = 3;
-        shorting_target = 150;
-      }
-    ];
+    ]; 
   };
 };
 };
