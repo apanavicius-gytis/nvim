@@ -19,6 +19,7 @@
     ./plugins/render_markdown.nix
     ./plugins/autoclose.nix
     ./plugins/startify.nix
+    ./plugins/lualine.nix
 
     ./plugins/theme.nix
 
