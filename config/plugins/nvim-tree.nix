@@ -3,7 +3,7 @@
     enable = true;
     actions.openFile.quitOnOpen = true;
     filters = {
-      dotfiles = false;
+      dotfiles = true;
       custom = [];
       gitClean = false;
     };
