@@ -15,6 +15,7 @@
     ./plugins/toggleterm.nix
     ./plugins/debug.nix
     ./plugins/dap.nix
+    ./plugins/dap-ui.nix
     ./plugins/direnv.nix
     ./plugins/render_markdown.nix
     ./plugins/autoclose.nix
