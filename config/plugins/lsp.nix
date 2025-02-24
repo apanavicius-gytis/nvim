@@ -15,6 +15,9 @@
             buildFlags = "wireinject";
           };
         };
+        phpactor = {
+          enable = true;
+        };
         helm_ls = {
           enable = true;
           extraOptions = {
