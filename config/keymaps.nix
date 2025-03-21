@@ -5,7 +5,7 @@
       key = "<leader>[";
       action = "<cmd>BufferPrevious<CR>";
       options = {
-        desc = "LazyGit (root dir)";
+        desc = "Tab to left";
       };
     }
     {
@@ -13,7 +13,7 @@
       key = "<leader>]";
       action = "<cmd>BufferNext<CR>";
       options = {
-        desc = "LazyGit (root dir)";
+        desc = "Tab to right";
       };
     }
    {
@@ -21,7 +21,15 @@
       key = "<leader>\\";
       action = "<cmd>BufferClose<CR>";
       options = {
-        desc = "LazyGit (root dir)";
+        desc = "Close a tab";
+      };
+    }
+   {
+      mode = "n";
+      key = "<leader>\q";
+      action = "<cmd>BufferCloseAllButCurrent<CR>";
+      options = {
+        desc = "Close all but current";
       };
     }
     {
@@ -37,7 +45,7 @@
       key = "<leader><F3>";
       action = "<cmd>:lua vim.lsp.buf.hover()<CR>";
       options = {
-        desc = "Rename item";
+        desc = "Hover item";
       };
     }
   ];
