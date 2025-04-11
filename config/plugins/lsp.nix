@@ -12,7 +12,9 @@
         gopls = {
           enable = true;
           settings = {
-            buildFlags = "wireinject";
+            gopls = {
+              buildFlags = [ "-tags=wireinject" ];
+            };
           };
         };
         phpactor = {
