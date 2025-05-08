@@ -37,6 +37,14 @@
         "*.go"
       ];
     }
-
+    {
+      command = ":silent! !sqlfluff fix --force --disable_progress_bar";
+      event = [
+        "BufWritePre"
+      ];
+      pattern = [
+        "*.sql"
+      ];
+    }
   ];
 }
