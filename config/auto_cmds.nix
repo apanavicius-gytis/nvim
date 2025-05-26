@@ -19,7 +19,7 @@
       ];
     }
     {
-      #      command = ":silent! :%!goimports";
+      command = ":silent! :%!goimports";
 
       event = [
         "BufWritePre"

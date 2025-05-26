@@ -28,5 +28,7 @@
     ./settings.nix
 
     ./keymaps.nix
+
+    ./pkgs.nix
   ];
 }

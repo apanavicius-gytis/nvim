@@ -69,9 +69,6 @@
                 shellHook = ''
                             # Existing shellHook logic for pre-commit-check
                             ${toString self'.checks.pre-commit-check.shellHook}
-
-                            # Ensure lazygit is in the PATH for subprocesses
-                            export PATH="${pkgs.lazygit}/bin:$PATH"
                   	      '';
               };
           };

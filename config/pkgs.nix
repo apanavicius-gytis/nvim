@@ -1,0 +1,6 @@
+{pkgs, ...}:
+{
+  extraPackages = [
+    pkgs.gotools
+  ];
+}
