@@ -2,5 +2,6 @@
 {
   extraPackages = [
     pkgs.gotools
+    pkgs.lazygit
   ];
 }
