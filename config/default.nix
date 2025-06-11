@@ -22,6 +22,7 @@
     ./plugins/lualine.nix
     ./plugins/smartcolumn.nix
     ./plugins/hardtime.nix
+    ./plugins/dadbod.nix
 
     ./plugins/theme.nix
 
