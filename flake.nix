@@ -40,7 +40,14 @@
           nixvim' = nixvim.legacyPackages.${system};
           nvim = nixvim'.makeNixvimWithModule {
             inherit pkgs;
-            module = ./config;
+            module = {pkgs, ...}: {
+            imports = [./config];
+            extraPackages = with pkgs; [
+              ];
+            extraConfigLua = ''
+              vim.g.db_ui_use_nerd_fonts = 1
+            '';
+            };
           };
         in
         {
