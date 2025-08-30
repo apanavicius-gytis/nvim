@@ -17,6 +17,9 @@
             };
           };
         };
+        pyright = {
+          enable = true;
+        };
         phpactor = {
           enable = true;
         };
