@@ -40,8 +40,8 @@
         "][" = "@class.outer";
       };
       gotoPreviousStart = {
-        "[m" = "@function.outer";
-        "[[" = "@class.outer";
+        "[m" = "@function.inner";
+        "[[" = "@class.inner";
       };
       gotoPreviousEnd = {
         "[M" = "@function.outer";
