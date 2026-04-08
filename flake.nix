@@ -1,3 +1,4 @@
+
 {
   description = "deCort.tech NeoVim configuration";
 
@@ -41,13 +42,13 @@
           nvim = nixvim'.makeNixvimWithModule {
             inherit pkgs;
             module = {pkgs, ...}: {
-            imports = [./config];
-            waylandSupport = pkgs.stdenv.hostPlatform.isLinux;
-            extraPackages = with pkgs; [
+              imports = [./config];
+              waylandSupport = pkgs.stdenv.hostPlatform.isLinux;
+              extraPackages = with pkgs; [
               ];
-            extraConfigLua = ''
-              vim.g.db_ui_use_nerd_fonts = 1
-            '';
+              extraConfigLua = ''
+                vim.g.db_ui_use_nerd_fonts = 1
+              '';
             };
           };
         in
@@ -67,17 +68,16 @@
           };
 
           formatter = pkgs.nixfmt-rfc-style;
-
           packages.default = nvim;
+
           devShells = {
             default =
               with pkgs;
               mkShell {
-                buildInputs = [ lazygit ]; # Add lazygit here
+                buildInputs = [ lazygit ];
                 shellHook = ''
-                            # Existing shellHook logic for pre-commit-check
-                            ${toString self'.checks.pre-commit-check.shellHook}
-                  	      '';
+                  ${toString self'.checks.pre-commit-check.shellHook}
+                '';
               };
           };
         };
