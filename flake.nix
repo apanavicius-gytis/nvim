@@ -43,7 +43,7 @@
             inherit pkgs;
             module = {pkgs, ...}: {
               imports = [./config];
-              waylandSupport = pkgs.stdenv.hostPlatform.isLinux;
+              clipboard.providers.wl-copy.enable = false;
               extraPackages = with pkgs; [
               ];
               extraConfigLua = ''

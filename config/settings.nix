@@ -11,7 +11,7 @@
       '';
 
     clipboard = {
-      providers.wl-copy.enable = true;
+      providers.wl-copy.enable = false;
     };
 
     opts = {
