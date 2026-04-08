@@ -3,8 +3,9 @@
   imports = [
     ./bufferline.nix
     ./auto_cmds.nix
- 
+
     ./plugins/barbar.nix
+    ./plugins/claude.nix
     ./plugins/nvim-tree.nix
     ./plugins/telescope.nix
     ./plugins/lsp.nix
