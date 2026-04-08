@@ -1,4 +1,3 @@
-
 {
   description = "deCort.tech NeoVim configuration";
 
@@ -41,15 +40,18 @@
           nixvim' = nixvim.legacyPackages.${system};
           nvim = nixvim'.makeNixvimWithModule {
             inherit pkgs;
-            module = {pkgs, ...}: {
-              imports = [./config];
-              clipboard.providers.wl-copy.enable = false;
-              extraPackages = with pkgs; [
-              ];
-              extraConfigLua = ''
-                vim.g.db_ui_use_nerd_fonts = 1
-              '';
-            };
+            module =
+              { pkgs, ... }:
+              {
+                imports = [ ./config ];
+                nixpkgs.config.allowUnfree = true;
+                clipboard.providers.wl-copy.enable = false;
+                extraPackages = with pkgs; [
+                ];
+                extraConfigLua = ''
+                  vim.g.db_ui_use_nerd_fonts = 1
+                '';
+              };
           };
         in
         {
