@@ -49,7 +49,7 @@
       };
     }
     {
-      mode = "n";
+      mode = [ "n" "t" ];
       key = "<leader>cc";
       action = "<cmd>ClaudeCode<CR>";
       options = {
