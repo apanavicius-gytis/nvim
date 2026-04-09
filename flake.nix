@@ -37,6 +37,10 @@
           ...
         }:
         let
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
           nixvim' = nixvim.legacyPackages.${system};
           nvim = nixvim'.makeNixvimWithModule {
             inherit pkgs;
@@ -44,7 +48,6 @@
               { pkgs, ... }:
               {
                 imports = [ ./config ];
-                nixpkgs.config.allowUnfree = true;
                 clipboard.providers.wl-copy.enable = false;
                 extraPackages = with pkgs; [
                 ];
