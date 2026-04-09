@@ -67,6 +67,9 @@
       # Disable swap file creation
       swapfile = false;
 
+      # Open vertical splits to the right
+      splitright = true;
+
       # Time in milliseconds to wait for a mapped sequence to complete
       timeoutlen = 300;
 

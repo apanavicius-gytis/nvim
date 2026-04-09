@@ -16,7 +16,7 @@
         desc = "Tab to right";
       };
     }
-   {
+    {
       mode = "n";
       key = "<leader>\\";
       action = "<cmd>BufferClose<CR>";
@@ -24,7 +24,7 @@
         desc = "Close a tab";
       };
     }
-   {
+    {
       mode = "n";
       key = "<leader>\q";
       action = "<cmd>BufferCloseAllButCurrent<CR>";
@@ -46,6 +46,14 @@
       action = "<cmd>:lua vim.lsp.buf.hover()<CR>";
       options = {
         desc = "Hover item";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>cc";
+      action = "<cmd>ClaudeCode<CR>";
+      options = {
+        desc = "Toggle Claude Code";
       };
     }
   ];
