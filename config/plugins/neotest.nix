@@ -2,7 +2,15 @@
 {
   plugins.neotest = {
     enable = true;
-    adapters.go.enable = true;
+    adapters.go = {
+      enable = true;
+      settings = {
+        args = [ "-v" "-count=1" ];
+        experimental = {
+          test_table = true;
+        };
+      };
+    };
   };
 
   keymaps = [
@@ -27,7 +35,7 @@
     {
       mode = "n";
       key = "<leader>td";
-      action = "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<cr>";
+      action = "<cmd>lua local prev = vim.fn.getcwd(0); vim.cmd('lcd ' .. vim.fn.expand('%:p:h')); require('dap-go').debug_test(); vim.cmd('lcd ' .. prev)<cr>";
       options = {
         silent = true;
         desc = "Debug nearest test";
