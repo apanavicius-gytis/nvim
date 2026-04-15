@@ -23,6 +23,7 @@
     ./plugins/lualine.nix
     ./plugins/smartcolumn.nix
     ./plugins/hardtime.nix
+    ./plugins/neotest.nix
 
     ./plugins/theme.nix
 
