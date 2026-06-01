@@ -1,14 +1,25 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins = {
-    lsp-lines = {enable = true;};
-    lsp-format = {enable = true;};
-    helm = {enable = true;};
+    lsp-lines = {
+      enable = true;
+    };
+    lsp-format = {
+      enable = true;
+    };
+    helm = {
+      enable = true;
+    };
     lsp = {
       enable = true;
       inlayHints = true;
       servers = {
-        lua_ls = {enable = true;};
-        nil_ls = {enable = true;};
+        lua_ls = {
+          enable = true;
+        };
+        nil_ls = {
+          enable = true;
+        };
         gopls = {
           enable = true;
           settings = {
@@ -41,7 +52,7 @@
             settings = {
               yaml = {
                 schemas = {
-                   kubernetes = "'*deployment*.yaml";
+                  kubernetes = "'*deployment*.yaml";
                   "http://json.schemastore.org/github-workflow" = ".github/workflows/*";
                   "http://json.schemastore.org/github-action" = ".github/action.{yml,yaml}";
                   "http://json.schemastore.org/ansible-stable-2.9" = "roles/tasks/*.{yml,yaml}";
@@ -49,13 +60,19 @@
                   "http://json.schemastore.org/ansible-playbook" = "*play*.{yml,yaml}";
                   "http://json.schemastore.org/chart" = "Chart.{yml,yaml}";
                   "https://json.schemastore.org/dependabot-v2" = ".github/dependabot.{yml,yaml}";
-                  "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" = "*docker-compose*.{yml,yaml}";
-                  "https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json" = "*flow*.{yml,yaml}";
-                  "https://gist.githubusercontent.com/arunura/44ce1d95e74bbccfe681e27b61e5b2c7/raw/c97fba8aaa41025831d626e081ce6aa27ba99da7/gitlab-ci.json" = ".gitlab/*";
+                  "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" =
+                    "*docker-compose*.{yml,yaml}";
+                  "https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json" =
+                    "*flow*.{yml,yaml}";
+                  "https://gist.githubusercontent.com/arunura/44ce1d95e74bbccfe681e27b61e5b2c7/raw/c97fba8aaa41025831d626e081ce6aa27ba99da7/gitlab-ci.json" =
+                    ".gitlab/*";
                 };
               };
             };
           };
+        };
+        ts_ls = {
+          enable = true;
         };
       };
 
