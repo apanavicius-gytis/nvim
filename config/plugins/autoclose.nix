@@ -1,7 +1,7 @@
 {
   plugins.autoclose = {
     enable = true;
-    keys = {
+    settings.keys = {
       "(" = { escape = false; close = true; pair = "()"; };
       "[" = { escape = false; close = true; pair = "[]"; };
       "{" = { escape = false; close = true; pair = "{}"; };

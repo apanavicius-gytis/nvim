@@ -1,10 +1,12 @@
 { pkgs, ... }:
 {
-  plugins.dap.extensions.dap-go = {
+  plugins.dap-go = {
     enable = true;
-    delve.path = "${pkgs.delve}/bin/dlv";
-    delve.args = [
-      "--check-go-version=false"
-    ];
+    settings.delve = {
+      path = "${pkgs.delve}/bin/dlv";
+      args = [
+        "--check-go-version=false"
+      ];
+    };
   };
 }

@@ -1,11 +1,13 @@
 {
   plugins.nvim-tree = {
     enable = true;
-    actions.openFile.quitOnOpen = true;
-    filters = {
-      dotfiles = false;
-      custom = [];
-      gitClean = false;
+    settings = {
+      actions.open_file.quit_on_open = true;
+      filters = {
+        dotfiles = false;
+        custom = [];
+        git_clean = false;
+      };
     };
   };
 
