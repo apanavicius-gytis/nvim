@@ -86,6 +86,9 @@
       fillchars = {
         eob = " ";
       };
+
+      # Use bash for terminal buffers (nushell is incompatible with shell commands)
+      shell = "/bin/bash";
     };
   };
 }
