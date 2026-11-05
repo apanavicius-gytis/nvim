@@ -150,7 +150,9 @@
     end
 
     vim.diagnostic.config{
-      float={border=_border}
+      float={border=_border},
+      virtual_text=true,
+      virtual_lines=false,
     };
 
     require('lspconfig.ui.windows').default_options = {
