@@ -4,7 +4,7 @@
       enable = true;
     };
     vim-dadbod-ui = {
-      enabled = true;
+      enable = true;
     };
   };
 }
