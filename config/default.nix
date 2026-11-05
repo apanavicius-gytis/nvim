@@ -24,6 +24,7 @@
     ./plugins/smartcolumn.nix
     ./plugins/hardtime.nix
     ./plugins/neotest.nix
+    ./plugins/dadbod.nix
 
     ./plugins/theme.nix
 
