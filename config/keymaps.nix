@@ -56,5 +56,13 @@
         desc = "Toggle Claude Code";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>D";
+      action = "<cmd>DBUIToggle<CR>";
+      options = {
+        desc = "Toggle DBUI";
+      };
+    }
   ];
 }
