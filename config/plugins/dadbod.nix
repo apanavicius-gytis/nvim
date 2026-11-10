@@ -5,17 +5,16 @@
     };
     vim-dadbod-ui = {
       enable = true;
-      settings = {
-        db_ui_table_helpers = {
-          postgresql = {
-            List = "SELECT * FROM {table} LIMIT 200";
-          };
-        };
-      };
     };
   };
 
   extraConfigLua = ''
+    vim.g.db_ui_table_helpers = {
+      postgresql = {
+        List = "SELECT * FROM {table} LIMIT 200",
+      },
+    }
+
     -- Use unicode box-drawing for psql output instead of ASCII.
     -- We write a wrapper psqlrc that sources the user's real one first,
     -- then applies our formatting settings.
