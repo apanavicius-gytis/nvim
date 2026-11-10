@@ -13,6 +13,7 @@
     ./plugins/lua_snip.nix
     ./plugins/lazygit.nix
     ./plugins/treesitter.nix
+    ./plugins/treesitter-context.nix
     ./plugins/toggleterm.nix
     ./plugins/debug.nix
     ./plugins/dap.nix
